@@ -46,17 +46,17 @@ Actions are converted to slash commands for AI coding tools:
 
 | Action | Command | Description |
 |--------|---------|-------------|
-| `generate-test-cases` | `/generate-test-cases` | Generate test cases from code |
-| `api-test` | `/api-test` | Create and run API tests |
-| `ui-test` | `/ui-test` | Execute UI tests |
-| `test-report` | `/test-report` | Generate test reports |
+| `asdm-generate-test-cases` | `/asdm-generate-test-cases` | Generate test cases from code |
+| `asdm-api-test` | `/asdm-api-test` | Create and run API tests |
+| `asdm-ui-test` | `/asdm-ui-test` | Execute UI tests |
+| `asdm-test-report` | `/asdm-test-report` | Generate test reports |
 
 ### Specifications
 Detailed specifications for each action are available in the `specs/` directory:
-- [Test Case Generation Specs](specs/specs4generate-test-cases.md)
-- [API Test Specs](specs/specs4api-test.md)
-- [UI Test Specs](specs/specs4ui-test.md)
-- [Test Report Specs](specs/specs4test-report.md)
+- [Test Case Generation Specs](specs/specs4asdm-generate-test-cases.md)
+- [API Test Specs](specs/specs4asdm-api-test.md)
+- [UI Test Specs](specs/specs4asdm-ui-test.md)
+- [Test Report Specs](specs/specs4asdm-test-report.md)
 
 ### Tools
 Utility tools for CLI environments are located in the `tools/` directory:
@@ -69,22 +69,22 @@ Utility tools for CLI environments are located in the `tools/` directory:
 
 1. **Generate test cases for a file:**
    ```
-   /generate-test-cases --file src/utils.js --type unit
+   /asdm-generate-test-cases --file src/utils.js --type unit
    ```
 
 2. **Run API tests:**
    ```
-   /api-test run --collection api-tests.json --env staging
+   /asdm-api-test run --collection api-tests.json --env staging
    ```
 
 3. **Execute UI tests:**
    ```
-   /ui-test run --suite e2e --browser chrome
+   /asdm-ui-test run --suite e2e --browser chrome
    ```
 
 4. **Generate test report:**
    ```
-   /test-report generate --format html --output reports/
+   /asdm-test-report generate --format html --output reports/
    ```
 
 ## Installation

@@ -1,7 +1,7 @@
-# Specifications for Test Report
+# Specifications for ASDM Test Report
 
 ## Purpose
-This document provides detailed specifications for the Test Report action, defining report generation, analytics, and visualization standards for test execution results.
+This document provides detailed specifications for the ASDM Test Report action, defining report generation, analytics, and visualization standards for test execution results.
 
 ## Architecture
 

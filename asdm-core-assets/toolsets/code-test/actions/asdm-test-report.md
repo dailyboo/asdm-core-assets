@@ -1,11 +1,11 @@
-# Test Report
+# ASDM Test Report
 
 ## Description
 Generate comprehensive test reports with analytics, trends, and actionable insights from test execution results.
 
 ## Usage
 ```
-/test-report [command] [options]
+/asdm-test-report [command] [options]
 ```
 
 ## Commands
@@ -40,32 +40,32 @@ Generate comprehensive test reports with analytics, trends, and actionable insig
 
 ### Generate HTML report
 ```
-/test-report generate --input test-results/ --format html --output reports/
+/asdm-test-report generate --input test-results/ --format html --output reports/
 ```
 
 ### Generate Allure report
 ```
-/test-report generate --input test-results/ --format allure --output allure-report/
+/asdm-test-report generate --input test-results/ --format allure --output allure-report/
 ```
 
 ### Merge multiple reports
 ```
-/test-report merge --input report1.json,report2.json --output merged-report.json
+/asdm-test-report merge --input report1.json,report2.json --output merged-report.json
 ```
 
 ### Compare test runs
 ```
-/test-report compare --baseline baseline.json --current current.json
+/asdm-test-report compare --baseline baseline.json --current current.json
 ```
 
 ### Generate trend analysis
 ```
-/test-report trend --input test-history/ --period 30d --output trends.html
+/asdm-test-report trend --input test-history/ --period 30d --output trends.html
 ```
 
 ### Export to JUnit format
 ```
-/test-report export --input test-results.json --format junit --output junit.xml
+/asdm-test-report export --input test-results.json --format junit --output junit.xml
 ```
 
 ## Supported Input Formats
@@ -259,7 +259,7 @@ Rich visualization:
 ```
 
 ## Related Specifications
-See [specs4test-report.md](../specs/specs4test-report.md) for detailed specifications.
+See [specs4asdm-test-report.md](../specs/specs4asdm-test-report.md) for detailed specifications.
 
 ## Output Format
 
@@ -293,17 +293,17 @@ See [specs4test-report.md](../specs/specs4test-report.md) for detailed specifica
 
 ### Publish to Artifacts
 ```
-/test-report generate --input results/ --format html --output reports/
+/asdm-test-report generate --input results/ --format html --output reports/
 ```
 
 ### Send Notifications
 ```
-/test-report generate --input results/ --notify slack --channel #qa
+/asdm-test-report generate --input results/ --notify slack --channel #qa
 ```
 
 ### Upload to Dashboard
 ```
-/test-report generate --input results/ --upload https://reports.example.com
+/asdm-test-report generate --input results/ --upload https://reports.example.com
 ```
 
 ## Best Practices
@@ -320,15 +320,15 @@ See [specs4test-report.md](../specs/specs4test-report.md) for detailed specifica
 
 ### Custom Templates
 ```
-/test-report generate --input results/ --template custom-template.html
+/asdm-test-report generate --input results/ --template custom-template.html
 ```
 
 ### Custom Metrics
 ```
-/test-report generate --input results/ --metrics custom-metrics.json
+/asdm-test-report generate --input results/ --metrics custom-metrics.json
 ```
 
 ### Branding
 ```
-/test-report generate --input results/ --logo company.png --theme dark
+/asdm-test-report generate --input results/ --logo company.png --theme dark
 ```

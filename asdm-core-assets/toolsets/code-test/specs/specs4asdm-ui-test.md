@@ -1,7 +1,7 @@
-# Specifications for UI Test
+# Specifications for ASDM UI Test
 
 ## Purpose
-This document provides detailed specifications for the UI Test action, defining test execution strategies, element interactions, and reporting standards for web UI testing.
+This document provides detailed specifications for the ASDM UI Test action, defining test execution strategies, element interactions, and reporting standards for web UI testing.
 
 ## Architecture
 
