@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "timeout": 30000,
+  "retry": {
+    "count": 0,
+    "delay": 1000,
+    "backoff": "exponential",
+    "retryOn": [500, 502, 503, 504]
+  },
+  "parallel": {
+    "enabled": false,
+    "workers": 1,
+    "strategy": "bySuite"
+  },
+  "report": {
+    "format": "json",
+    "output": "./reports",
+    "includeRequest": true,
+    "includeResponse": true
+  },
+  "logging": {
+    "level": "info",
+    "file": "./logs/api-test.log",
+    "format": "json"
+  },
+  "proxy": {
+    "enabled": false,
+    "host": "",
+    "port": 8080
+  },
+  "benchmark": {
+    "load": {
+      "rps": 100,
+      "duration": "60s",
+      "rampUp": "10s"
+    },
+    "stress": {
+      "users": 500,
+      "rampUp": "30s",
+      "duration": "120s"
+    },
+    "spike": {
+      "peakRps": 1000,
+      "duration": "10s"
+    }
+  },
+  "mock": {
+    "port": 3000,
+    "cors": true,
+    "logging": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "defaultFramework": "jest",
+  "coverageTarget": 80,
+  "generateMocks": true,
+  "includePrivate": false,
+  "namingConvention": {
+    "pattern": "{functionName}_should_{behavior}_when_{condition}",
+    "separator": "_"
+  },
+  "templates": {
+    "unit": "templates/unit-test.hbs",
+    "integration": "templates/integration-test.hbs",
+    "e2e": "templates/e2e-test.hbs"
+  },
+  "exclusions": [
+    "node_modules",
+    "dist",
+    "build",
+    "*.config.js",
+    "*.d.ts"
+  ],
+  "mockConfig": {
+    "auto": true,
+    "exclude": ["fs", "path", "crypto", "http", "https"]
+  },
+  "languages": {
+    "javascript": {
+      "extensions": [".js", ".jsx"],
+      "parser": "babel"
+    },
+    "typescript": {
+      "extensions": [".ts", ".tsx"],
+      "parser": "typescript"
+    },
+    "python": {
+      "extensions": [".py"],
+      "parser": "python"
+    },
+    "java": {
+      "extensions": [".java"],
+      "parser": "java"
+    },
+    "csharp": {
+      "extensions": [".cs"],
+      "parser": "csharp"
+    }
+  },
+  "frameworks": {
+    "jest": {
+      "import": "import { describe, it, expect, beforeEach, afterEach } from '@jest/globals';",
+      "assertion": "expect"
+    },
+    "mocha": {
+      "import": "import { describe, it, beforeEach, afterEach } from 'mocha';",
+      "assertion": "assert"
+    },
+    "pytest": {
+      "import": "import pytest",
+      "assertion": "assert"
+    },
+    "junit": {
+      "import": "import org.junit.*;",
+      "assertion": "Assertions"
+    }
+  }
+}

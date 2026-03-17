@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "title": "Test Execution Report",
+  "formats": ["html", "json", "junit"],
+  "outputDir": "./reports",
+  "includeScreenshots": true,
+  "includeVideos": false,
+  "includeTraces": false,
+  "groupBy": "suite",
+  "showTrends": true,
+  "flakyDetection": true,
+  "retention": {
+    "enabled": true,
+    "days": 90,
+    "maxReports": 100
+  },
+  "notifications": {
+    "slack": {
+      "enabled": false,
+      "webhook": "",
+      "channel": "#qa",
+      "onFailure": true,
+      "onSuccess": false
+    },
+    "email": {
+      "enabled": false,
+      "smtp": {
+        "host": "",
+        "port": 587,
+        "secure": false,
+        "auth": {
+          "user": "",
+          "pass": ""
+        }
+      },
+      "recipients": [],
+      "onFailure": true,
+      "onSuccess": false
+    },
+    "webhook": {
+      "enabled": false,
+      "url": "",
+      "method": "POST",
+      "onFailure": true,
+      "onSuccess": false
+    }
+  },
+  "template": {
+    "custom": null,
+    "theme": {
+      "primary": "#007bff",
+      "success": "#28a745",
+      "danger": "#dc3545",
+      "warning": "#ffc107",
+      "info": "#17a2b8",
+      "dark": "#343a40"
+    },
+    "logo": null,
+    "company": "",
+    "sections": ["summary", "failures", "performance", "coverage", "trends"]
+  },
+  "analytics": {
+    "flakyThreshold": 0.2,
+    "slowTestThreshold": 10000,
+    "trendPeriod": "30d"
+  }
+}

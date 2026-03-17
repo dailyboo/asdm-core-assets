@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "browsers": {
+    "chromium": {
+      "enabled": true,
+      "headless": true,
+      "viewport": {"width": 1280, "height": 720},
+      "downloads": true
+    },
+    "firefox": {
+      "enabled": true,
+      "headless": true,
+      "viewport": {"width": 1280, "height": 720}
+    },
+    "webkit": {
+      "enabled": true,
+      "headless": false,
+      "viewport": {"width": 1280, "height": 720}
+    }
+  },
+  "devices": [
+    {"name": "iPhone 13", "viewport": {"width": 390, "height": 844}, "userAgent": "iPhone"},
+    {"name": "iPhone 13 Pro Max", "viewport": {"width": 428, "height": 926}, "userAgent": "iPhone"},
+    {"name": "Samsung Galaxy S21", "viewport": {"width": 360, "height": 800}, "userAgent": "Android"},
+    {"name": "iPad Pro", "viewport": {"width": 1024, "height": 1366}, "userAgent": "iPad"},
+    {"name": "Pixel 5", "viewport": {"width": 393, "height": 851}, "userAgent": "Android"}
+  ],
+  "testDir": "./tests",
+  "timeout": 30000,
+  "expect": {
+    "timeout": 5000
+  },
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  },
+  "workers": 1,
+  "reporter": {
+    "format": "html",
+    "output": "./reports"
+  },
+  "use": {
+    "baseURL": "",
+    "trace": "on-first-retry",
+    "screenshot": "only-on-failure",
+    "video": "retain-on-failure",
+    "actionTimeout": 10000,
+    "navigationTimeout": 30000
+  },
+  "visualTesting": {
+    "enabled": true,
+    "threshold": 0.1,
+    "baselineDir": "./screenshots/baseline",
+    "actualDir": "./screenshots/actual",
+    "diffDir": "./screenshots/diff"
+  },
+  "accessibility": {
+    "enabled": true,
+    "tags": ["wcag2a", "wcag2aa"]
+  }
+}
