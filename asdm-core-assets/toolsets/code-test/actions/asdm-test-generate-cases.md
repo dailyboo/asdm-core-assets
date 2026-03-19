@@ -5,7 +5,7 @@ Automatically generate comprehensive test cases for source code, including unit 
 
 ## Usage
 ```
-/asdm-generate-test-cases [options]
+/asdm-test-generate-cases [options]
 ```
 
 ## Commands
@@ -33,27 +33,27 @@ Automatically generate comprehensive test cases for source code, including unit 
 
 ### Basic unit test generation
 ```
-/asdm-generate-test-cases --file src/utils.js --type unit
+/asdm-test-generate-cases --file src/utils.js --type unit
 ```
 
 ### Generate integration tests with specific framework
 ```
-/asdm-generate-test-cases --file src/api/ --type integration --framework jest
+/asdm-test-generate-cases --file src/api/ --type integration --framework jest
 ```
 
 ### Generate tests with coverage target
 ```
-/asdm-generate-test-cases --file src/services/ --type unit --coverage 90 --output tests/
+/asdm-test-generate-cases --file src/services/ --type unit --coverage 90 --output tests/
 ```
 
 ### Analyze and generate test plan
 ```
-/asdm-generate-test-cases analyze --file src/ --output test-plan.json
+/asdm-test-generate-cases analyze --file src/ --output test-plan.json
 ```
 
 ### Update existing tests
 ```
-/asdm-generate-test-cases update --file src/utils.js --test-file tests/utils.test.js
+/asdm-test-generate-cases update --file src/utils.js --test-file tests/utils.test.js
 ```
 
 ## Test Generation Strategy
@@ -121,7 +121,7 @@ tests/
 - Timeout scenarios
 
 ## Related Specifications
-See [specs4asdm-generate-test-cases.md](../specs/specs4asdm-generate-test-cases.md) for detailed specifications.
+See [specs4asdm-test-generate-cases.md](../specs/specs4asdm-test-generate-cases.md) for detailed specifications.
 
 ## Output Format
 

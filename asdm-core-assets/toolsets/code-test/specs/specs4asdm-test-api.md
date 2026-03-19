@@ -1,4 +1,4 @@
-# Specifications for ASDM API Test
+# Specifications for ASDM Test API
 
 ## Purpose
 This document provides detailed specifications for the ASDM API Test action, defining test execution, validation, and reporting standards for API testing.
@@ -486,14 +486,14 @@ JSON Path syntax:
 ### GitHub Actions Workflow
 ```yaml
 name: API Tests
-:on: [push, pull_request]
+on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run API Tests
-        run: /asdm-api-test run --collection api-tests.json --env staging
+        run: /asdm-test-api run --collection api-tests.json --env staging
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }}
 ```

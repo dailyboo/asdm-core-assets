@@ -46,16 +46,16 @@ Actions are converted to slash commands for AI coding tools:
 
 | Action | Command | Description |
 |--------|---------|-------------|
-| `asdm-generate-test-cases` | `/asdm-generate-test-cases` | Generate test cases from code |
-| `asdm-api-test` | `/asdm-api-test` | Create and run API tests |
-| `asdm-ui-test` | `/asdm-ui-test` | Execute UI tests |
+| `asdm-test-generate-cases` | `/asdm-test-generate-cases` | Generate test cases from code |
+| `asdm-test-api` | `/asdm-test-api` | Create and run API tests |
+| `asdm-test-ui` | `/asdm-test-ui` | Execute UI tests |
 | `asdm-test-report` | `/asdm-test-report` | Generate test reports |
 
 ### Specifications
 Detailed specifications for each action are available in the `specs/` directory:
-- [Test Case Generation Specs](specs/specs4asdm-generate-test-cases.md)
-- [API Test Specs](specs/specs4asdm-api-test.md)
-- [UI Test Specs](specs/specs4asdm-ui-test.md)
+- [Test Case Generation Specs](specs/specs4asdm-test-generate-cases.md)
+- [API Test Specs](specs/specs4asdm-test-api.md)
+- [UI Test Specs](specs/specs4asdm-test-ui.md)
 - [Test Report Specs](specs/specs4asdm-test-report.md)
 
 ### Tools
@@ -69,17 +69,17 @@ Utility tools for CLI environments are located in the `tools/` directory:
 
 1. **Generate test cases for a file:**
    ```
-   /asdm-generate-test-cases --file src/utils.js --type unit
+   /asdm-test-generate-cases --file src/utils.js --type unit
    ```
 
 2. **Run API tests:**
    ```
-   /asdm-api-test run --collection api-tests.json --env staging
+   /asdm-test-api run --collection api-tests.json --env staging
    ```
 
 3. **Execute UI tests:**
    ```
-   /asdm-ui-test run --suite e2e --browser chrome
+   /asdm-test-ui run --suite e2e --browser chrome
    ```
 
 4. **Generate test report:**

@@ -41,34 +41,34 @@ Claude Code uses Markdown files with Frontmatter metadata for slash commands. Cr
 mkdir -p .claude/commands/
 
 # Generate Test Cases command
-cat > .claude/commands/asdm-generate-test-cases.md << 'EOF'
+cat > .claude/commands/asdm-test-generate-cases.md << 'EOF'
 ---
 description: "Generate test cases from source code"
 argument-hint: "<file or directory>"
 ---
 
 EOF
-cat .asdm/toolsets/code-test/actions/asdm-generate-test-cases.md >> .claude/commands/asdm-generate-test-cases.md
+cat .asdm/toolsets/code-test/actions/asdm-test-generate-cases.md >> .claude/commands/asdm-test-generate-cases.md
 
 # API Test command
-cat > .claude/commands/asdm-api-test.md << 'EOF'
+cat > .claude/commands/asdm-test-api.md << 'EOF'
 ---
 description: "Generate and execute API tests"
 argument-hint: "<command> [options]"
 ---
 
 EOF
-cat .asdm/toolsets/code-test/actions/asdm-api-test.md >> .claude/commands/asdm-api-test.md
+cat .asdm/toolsets/code-test/actions/asdm-test-api.md >> .claude/commands/asdm-test-api.md
 
 # UI Test command
-cat > .claude/commands/asdm-ui-test.md << 'EOF'
+cat > .claude/commands/asdm-test-ui.md << 'EOF'
 ---
 description: "Execute automated UI tests"
 argument-hint: "<command> [options]"
 ---
 
 EOF
-cat .asdm/toolsets/code-test/actions/asdm-ui-test.md >> .claude/commands/asdm-ui-test.md
+cat .asdm/toolsets/code-test/actions/asdm-test-ui.md >> .claude/commands/asdm-test-ui.md
 
 # Test Report command
 cat > .claude/commands/asdm-test-report.md << 'EOF'
@@ -89,7 +89,7 @@ GitHub Copilot uses `.prompt.md` files with YAML frontmatter. Create prompt file
 mkdir -p .github/prompts/
 
 # Generate Test Cases prompt
-cat > .github/prompts/asdm-generate-test-cases.prompt.md << 'EOF'
+cat > .github/prompts/asdm-test-generate-cases.prompt.md << 'EOF'
 ---
 agent: 'agent'
 description: 'Generate test cases from source code'
@@ -97,10 +97,10 @@ argument-hint: 'Enter file or directory path'
 ---
 
 EOF
-cat .asdm/toolsets/code-test/actions/asdm-generate-test-cases.md >> .github/prompts/asdm-generate-test-cases.prompt.md
+cat .asdm/toolsets/code-test/actions/asdm-test-generate-cases.md >> .github/prompts/asdm-test-generate-cases.prompt.md
 
 # API Test prompt
-cat > .github/prompts/asdm-api-test.prompt.md << 'EOF'
+cat > .github/prompts/asdm-test-api.prompt.md << 'EOF'
 ---
 agent: 'agent'
 description: 'Generate and execute API tests'
@@ -108,10 +108,10 @@ argument-hint: 'Enter command and options'
 ---
 
 EOF
-cat .asdm/toolsets/code-test/actions/asdm-api-test.md >> .github/prompts/asdm-api-test.prompt.md
+cat .asdm/toolsets/code-test/actions/asdm-test-api.md >> .github/prompts/asdm-test-api.prompt.md
 
 # UI Test prompt
-cat > .github/prompts/asdm-ui-test.prompt.md << 'EOF'
+cat > .github/prompts/asdm-test-ui.prompt.md << 'EOF'
 ---
 agent: 'agent'
 description: 'Execute automated UI tests'
@@ -119,7 +119,7 @@ argument-hint: 'Enter command and options'
 ---
 
 EOF
-cat .asdm/toolsets/code-test/actions/asdm-ui-test.md >> .github/prompts/asdm-ui-test.prompt.md
+cat .asdm/toolsets/code-test/actions/asdm-test-ui.md >> .github/prompts/asdm-test-ui.prompt.md
 
 # Test Report prompt
 cat > .github/prompts/asdm-test-report.prompt.md << 'EOF'
@@ -141,9 +141,9 @@ CodeBuddy doesn't support frontmatter, so simply copy the instruction files as-i
 mkdir -p .codebuddy/commands/
 
 # Copy instruction files directly (no frontmatter needed)
-cp .asdm/toolsets/code-test/actions/asdm-generate-test-cases.md .codebuddy/commands/
-cp .asdm/toolsets/code-test/actions/asdm-api-test.md .codebuddy/commands/
-cp .asdm/toolsets/code-test/actions/asdm-ui-test.md .codebuddy/commands/
+cp .asdm/toolsets/code-test/actions/asdm-test-generate-cases.md .codebuddy/commands/
+cp .asdm/toolsets/code-test/actions/asdm-test-api.md .codebuddy/commands/
+cp .asdm/toolsets/code-test/actions/asdm-test-ui.md .codebuddy/commands/
 cp .asdm/toolsets/code-test/actions/asdm-test-report.md .codebuddy/commands/
 ```
 
@@ -161,9 +161,9 @@ You can directly use the instruction files by copying their relative paths and p
    ```
 
 2. **Right-click on the desired instruction file** and copy its relative path:
-   - For test case generation: `asdm-generate-test-cases.md`
-   - For API testing: `asdm-api-test.md`
-   - For UI testing: `asdm-ui-test.md`
+   - For test case generation: `asdm-test-generate-cases.md`
+   - For API testing: `asdm-test-api.md`
+   - For UI testing: `asdm-test-ui.md`
    - For test reporting: `asdm-test-report.md`
 
 3. **Enter a prompt** in your AI coding assistant:
@@ -178,7 +178,7 @@ You can directly use the instruction files by copying their relative paths and p
 After installation, you can generate test cases for your code:
 
 ```shell
-Follow the instructions in .asdm/toolsets/code-test/actions/generate-test-cases.md
+Follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-generate-cases.md
 ```
 
 This will:
@@ -192,7 +192,7 @@ This will:
 For API testing:
 
 ```shell
-Follow the instructions in .asdm/toolsets/code-test/actions/asdm-api-test.md
+Follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-api.md
 ```
 
 This will:
@@ -206,7 +206,7 @@ This will:
 For UI testing:
 
 ```shell
-Follow the instructions in .asdm/toolsets/code-test/actions/asdm-ui-test.md
+Follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-ui.md
 ```
 
 This will:
@@ -233,9 +233,9 @@ This will:
 
 Once installed, you can use the following commands:
 
-1. **`/asdm-generate-test-cases`** - Generate test cases from source code
-2. **`/asdm-api-test`** - Generate and execute API tests
-3. **`/asdm-ui-test`** - Execute automated UI tests
+1. **`/asdm-test-generate-cases`** - Generate test cases from source code
+2. **`/asdm-test-api`** - Generate and execute API tests
+3. **`/asdm-test-ui`** - Execute automated UI tests
 4. **`/asdm-test-report`** - Generate test reports with analytics
 
 ## Verification
@@ -246,9 +246,9 @@ After installation, verify that:
 2. The CodeTest toolset files are located in `.asdm/toolsets/code-test`
 
 **For other providers**: Verify that you can access the instruction files at:
-- `.asdm/toolsets/code-test/actions/asdm-generate-test-cases.md`
-- `.asdm/toolsets/code-test/actions/asdm-api-test.md`
-- `.asdm/toolsets/code-test/actions/asdm-ui-test.md`
+- `.asdm/toolsets/code-test/actions/asdm-test-generate-cases.md`
+- `.asdm/toolsets/code-test/actions/asdm-test-api.md`
+- `.asdm/toolsets/code-test/actions/asdm-test-ui.md`
 - `.asdm/toolsets/code-test/actions/asdm-test-report.md`
 
 ## Usage Examples
@@ -260,21 +260,21 @@ After installation, verify that:
 Follow instructions in .asdm/toolsets/code-test/INSTALL.md
 
 # Generate test cases
-Follow the instructions in .asdm/toolsets/code-test/actions/asdm-generate-test-cases.md
+Follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-generate-cases.md
 
 # Run API tests
-Follow the instructions in .asdm/toolsets/code-test/actions/asdm-api-test.md
+Follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-api.md
 
 # Run UI tests
-Follow the instructions in .asdm/toolsets/code-test/actions/asdm-ui-test.md
+Follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-ui.md
 
 # Generate test report
 Follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-report.md
 
 # Example prompts when using slash commands:
-/asdm-generate-test-cases --file src/utils.js --type unit
-/asdm-api-test run --collection api-tests.json --env staging
-/asdm-ui-test run --suite tests/e2e/ --browser chrome
+/asdm-test-generate-cases --file src/utils.js --type unit
+/asdm-test-api run --collection api-tests.json --env staging
+/asdm-test-ui run --suite tests/e2e/ --browser chrome
 /asdm-test-report generate --format html --output reports/
 ```
 
@@ -284,15 +284,15 @@ Follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-report.md
 - The actual implementation of the commands will be handled by the AI model using the templates and instructions provided in CodeTest (toolset ID: `code-test`)
 - Make sure to customize the provider-specific setup based on your actual AI coding assistant
 - The toolset ID `code-test` should be used consistently when referring to CodeTest in commands and documentation
-- **For providers not in the detection logic**: Users can manually use the instruction files by copying their relative paths and entering prompts like "follow the instructions in .asdm/toolsets/code-test/actions/asdm-generate-test-cases.md"
+- **For providers not in the detection logic**: Users can manually use the instruction files by copying their relative paths and entering prompts like "follow the instructions in .asdm/toolsets/code-test/actions/asdm-test-generate-cases.md"
 
 ## Spec Documents
 
 The toolset uses the following spec documents as templates:
 
-1. **`specs4asdm-generate-test-cases.md`** - Specification for test case generation
-2. **`specs4asdm-api-test.md`** - Specification for API testing methodology
-3. **`specs4asdm-ui-test.md`** - Specification for UI testing procedures
+1. **`specs4asdm-test-generate-cases.md`** - Specification for test case generation
+2. **`specs4asdm-test-api.md`** - Specification for API testing methodology
+3. **`specs4asdm-test-ui.md`** - Specification for UI testing procedures
 4. **`specs4asdm-test-report.md`** - Template for generating test reports
 
 ## Integration with Other Toolsets

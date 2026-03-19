@@ -1,4 +1,4 @@
-# Specifications for ASDM Generate Test Cases
+# Specifications for ASDM Test Generate Cases
 
 ## Purpose
 This document provides detailed specifications for the ASDM Generate Test Cases action, defining test generation strategies, coverage requirements, and output standards.

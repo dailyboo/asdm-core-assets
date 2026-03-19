@@ -5,7 +5,7 @@ Generate and execute comprehensive API tests including REST, GraphQL, and WebSoc
 
 ## Usage
 ```
-/asdm-api-test [command] [options]
+/asdm-test-api [command] [options]
 ```
 
 ## Commands
@@ -38,32 +38,32 @@ Generate and execute comprehensive API tests including REST, GraphQL, and WebSoc
 
 ### Run API tests
 ```
-/asdm-api-test run --collection api-tests.json --env staging
+/asdm-test-api run --collection api-tests.json --env staging
 ```
 
 ### Generate tests from OpenAPI spec
 ```
-/asdm-api-test generate --schema api-spec.yaml --output tests/api/
+/asdm-test-api generate --schema api-spec.yaml --output tests/api/
 ```
 
 ### Run with parallel execution
 ```
-/asdm-api-test run --collection api-tests/ --parallel 5 --env prod
+/asdm-test-api run --collection api-tests/ --parallel 5 --env prod
 ```
 
 ### Validate responses against schema
 ```
-/asdm-api-test validate --collection api-tests.json --schema api-spec.yaml
+/asdm-test-api validate --collection api-tests.json --schema api-spec.yaml
 ```
 
 ### Run performance benchmark
 ```
-/asdm-api-test benchmark --collection load-tests.json --iterations 100
+/asdm-test-api benchmark --collection load-tests.json --iterations 100
 ```
 
 ### Start mock server
 ```
-/asdm-api-test mock --port 3000 --responses mock-data.json
+/asdm-test-api mock --port 3000 --responses mock-data.json
 ```
 
 ## Test Collection Format
@@ -176,26 +176,26 @@ Generate and execute comprehensive API tests including REST, GraphQL, and WebSoc
 
 ### Bearer Token
 ```
-/asdm-api-test run --auth bearer --token $API_TOKEN
+/asdm-test-api run --auth bearer --token $API_TOKEN
 ```
 
 ### Basic Auth
 ```
-/asdm-api-test run --auth basic --username user --password pass
+/asdm-test-api run --auth basic --username user --password pass
 ```
 
 ### OAuth 2.0
 ```
-/asdm-api-test run --auth oauth2 --client-id $CLIENT_ID --client-secret $SECRET
+/asdm-test-api run --auth oauth2 --client-id $CLIENT_ID --client-secret $SECRET
 ```
 
 ### API Key
 ```
-/asdm-api-test run --auth api-key --key X-API-Key --value $API_KEY
+/asdm-test-api run --auth api-key --key X-API-Key --value $API_KEY
 ```
 
 ## Related Specifications
-See [specs4asdm-api-test.md](../specs/specs4asdm-api-test.md) for detailed specifications.
+See [specs4asdm-test-api.md](../specs/specs4asdm-test-api.md) for detailed specifications.
 
 ## Output Format
 
@@ -228,17 +228,17 @@ See [specs4asdm-api-test.md](../specs/specs4asdm-api-test.md) for detailed speci
 
 ### Load Testing
 ```
-/asdm-api-test benchmark --type load --rps 100 --duration 60s
+/asdm-test-api benchmark --type load --rps 100 --duration 60s
 ```
 
 ### Stress Testing
 ```
-/asdm-api-test benchmark --type stress --users 500 --ramp-up 30s
+/asdm-test-api benchmark --type stress --users 500 --ramp-up 30s
 ```
 
 ### Spike Testing
 ```
-/asdm-api-test benchmark --type spike --peak-rps 1000 --duration 10s
+/asdm-test-api benchmark --type spike --peak-rps 1000 --duration 10s
 ```
 
 ## Best Practices
@@ -255,14 +255,14 @@ See [specs4asdm-api-test.md](../specs/specs4asdm-api-test.md) for detailed speci
 ### GitHub Actions
 ```yaml
 - name: Run API Tests
-  run: /asdm-api-test run --collection api-tests.json --env ${{ matrix.env }}
+  run: /asdm-test-api run --collection api-tests.json --env ${{ matrix.env }}
 ```
 
 ### GitLab CI
 ```yaml
 api_test:
   script:
-    - /asdm-api-test run --collection api-tests.json --report report.json
+    - /asdm-test-api run --collection api-tests.json --report report.json
   artifacts:
     reports:
       junit: report.json

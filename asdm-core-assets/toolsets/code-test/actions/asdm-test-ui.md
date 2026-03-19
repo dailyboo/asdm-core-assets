@@ -5,7 +5,7 @@ Execute automated UI tests for web applications including end-to-end workflows, 
 
 ## Usage
 ```
-/asdm-ui-test [command] [options]
+/asdm-test-ui [command] [options]
 ```
 
 ## Commands
@@ -40,37 +40,37 @@ Execute automated UI tests for web applications including end-to-end workflows, 
 
 ### Run UI tests
 ```
-/asdm-ui-test run --suite tests/e2e/
+/asdm-test-ui run --suite tests/e2e/
 ```
 
 ### Run on specific browser
 ```
-/asdm-ui-test run --suite tests/e2e/ --browser firefox --headless false
+/asdm-test-ui run --suite tests/e2e/ --browser firefox --headless false
 ```
 
 ### Mobile device testing
 ```
-/asdm-ui-test run --suite tests/mobile/ --device "iPhone 13"
+/asdm-test-ui run --suite tests/mobile/ --device "iPhone 13"
 ```
 
 ### Record test interactions
 ```
-/asdm-ui-test record --url https://example.com --output test.spec.js
+/asdm-test-ui record --url https://example.com --output test.spec.js
 ```
 
 ### Generate test code
 ```
-/asdm-ui-test codegen --url https://example.com --framework playwright
+/asdm-test-ui codegen --url https://example.com --framework playwright
 ```
 
 ### Visual regression testing
 ```
-/asdm-ui-test run --suite tests/visual/ --screenshot on --update-snapshots
+/asdm-test-ui run --suite tests/visual/ --screenshot on --update-snapshots
 ```
 
 ### Debug mode
 ```
-/asdm-ui-test debug --suite tests/e2e/login.spec.js
+/asdm-test-ui debug --suite tests/e2e/login.spec.js
 ```
 
 ## Test Suite Structure
@@ -209,11 +209,11 @@ test.use({
 
 ### Responsive Testing
 ```
-/asdm-ui-test run --suite tests/responsive/ --viewport 375x667,768x1024,1920x1080
+/asdm-test-ui run --suite tests/responsive/ --viewport 375x667,768x1024,1920x1080
 ```
 
 ## Related Specifications
-See [specs4asdm-ui-test.md](../specs/specs4asdm-ui-test.md) for detailed specifications.
+See [specs4asdm-test-ui.md](../specs/specs4asdm-test-ui.md) for detailed specifications.
 
 ## Output Format
 
@@ -260,7 +260,7 @@ See [specs4asdm-ui-test.md](../specs/specs4asdm-ui-test.md) for detailed specifi
 
 ### Trace Viewer
 ```
-/asdm-ui-test run --suite tests/ --trace on
+/asdm-test-ui run --suite tests/ --trace on
 ```
 Opens interactive trace viewer showing:
 - Action timeline
@@ -270,12 +270,12 @@ Opens interactive trace viewer showing:
 
 ### Step-through Debug
 ```
-/asdm-ui-test debug --suite tests/login.spec.js
+/asdm-test-ui debug --suite tests/login.spec.js
 ```
 
 ### Inspector Mode
 ```
-/asdm-ui-test codegen --url https://example.com
+/asdm-test-ui codegen --url https://example.com
 ```
 
 ## CI/CD Integration
@@ -283,7 +283,7 @@ Opens interactive trace viewer showing:
 ### GitHub Actions
 ```yaml
 - name: Run UI Tests
-  run: /asdm-ui-test run --suite tests/e2e/ --report report.html
+  run: /asdm-test-ui run --suite tests/e2e/ --report report.html
   artifacts:
     paths:
       - screenshots/
@@ -295,5 +295,5 @@ Opens interactive trace viewer showing:
 ui_test:
   image: mcr.microsoft.com/playwright
   script:
-    - /asdm-ui-test run --suite tests/e2e/
+    - /asdm-test-ui run --suite tests/e2e/
 ```
